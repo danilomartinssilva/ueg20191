@@ -34,6 +34,15 @@ public class ListaDeClientesTableModel extends AbstractTableModel {
                 return dadosTabela.get(rowIndex).getId();
             case 1:
                 return dadosTabela.get(rowIndex).getNome();
+                 case 2:
+                return dadosTabela.get(rowIndex).getEmail();
+                case 3:
+                return dadosTabela.get(rowIndex).getTelefone();
+                case 4:
+                return dadosTabela.get(rowIndex).getIdade();
+                
+         
+                
         }
         return null;
     }
