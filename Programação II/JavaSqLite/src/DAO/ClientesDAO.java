@@ -26,17 +26,17 @@ public class ClientesDAO {
             + "nome,email,idade,telefone,cpf,endereco)"
             + "VALUES (?,?,?,?,?,?)";
     private static String DELETE = "DELETE FROM clientes WHERE id = ?";
-    public static boolean create(){
+    public static boolean create(Clientes c){
         conn =Database.getConnection();
-        Clientes c = new Clientes();
+        
         try{            
             PreparedStatement ps = conn.prepareStatement(INSERT);
-            ps.setString(0, c.getNome());
-            ps.setString(1, c.getEmail());
-            ps.setInt(2, c.getIdade());
-            ps.setString(3, c.getTelefone());
-            ps.setString(4, c.getCpf());
-            ps.setString(5, c.getEndereco());   
+            ps.setString(1, c.getNome());
+            ps.setString(2, c.getEmail());
+            ps.setInt(3, c.getIdade());
+            ps.setString(4, c.getTelefone());
+            ps.setString(5, c.getCpf());
+            ps.setString(6, c.getEndereco());   
             ps.execute();
             return true;
             
@@ -78,8 +78,6 @@ public class ClientesDAO {
            ps.setInt(1, id);
            ps.execute();
            return true;
-          
-           
         }
         catch(SQLException e){
             System.out.println("Erro ao excluir");
