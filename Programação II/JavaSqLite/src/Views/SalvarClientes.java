@@ -26,6 +26,7 @@ public class SalvarClientes extends javax.swing.JFrame {
         initComponents();        
         this.setLocationRelativeTo(null);        
         JOptionPane.showMessageDialog(null, id);
+        
     }
 
     /**
